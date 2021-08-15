@@ -18,11 +18,15 @@ The ontologies capture the elements of stress in a structured format in which so
 
 * Download Protege: https://protege.stanford.edu/
 
-* Open the files in Protege: tpb-user-ontology.owl and tpb-environment-ontology.owl
+* Open the files in Protege: 
+<br/> > RDF-XML-Syntax/tpb-user-ontology.owl
+<br/> > RDF-XML-Syntax/tpb-environment-ontology.owl
 
 * Open the tabs: Classes, Object Properties and Data Protperties
 
-* Get an overview by looking at the provided figures/images: tpb-user-ontology.png and tpb-environment-ontology.png
+* Get an overview by looking at the provided figures/images: 
+<br/> > Figures/tpb-user-ontology.png
+<br/> > Figures/tpb-environment-ontology.png
 
 ### Authors
 
