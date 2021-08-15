@@ -16,8 +16,7 @@ The ontologies capture the elements of stress in a structured format in which so
 
 ### Authors
 
-* Andreas Brännström {andreasb@cs.umu.se} <br />https://people.cs.umu.se/andreasb
-
+* Andreas Brännström {andreasb@cs.umu.se}
 * Timotheus Kampik {tkampik@cs.umu.se} 
 * Juan Carlos Nieves {jcnieves@cs.umu.se}
 
