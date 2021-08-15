@@ -19,8 +19,8 @@ The ontologies capture the elements of stress in a structured format in which so
 * Download Protege: https://protege.stanford.edu/
 
 * Open the files in Protege: 
-<br/> > [RDF-XML-Syntax/tpb-user-ontology.owl](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/RDF-XML-Syntax/tpb-user-ontology.owl)
-<br/> > [RDF-XML-Syntax/tpb-environment-ontology.owl](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/RDF-XML-Syntax/tpb-environment-ontology.owl)
+<br/> > [tpb-user-ontology.owl](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-user-ontology-TURTLE-Syntax.owl)
+<br/> > [tpb-environment-ontology.owl](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-environment-ontology-TURTLE-Syntax.owl)
 
 * Open the tabs: Classes, Object Properties and Data Protperties
 
