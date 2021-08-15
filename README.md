@@ -1,6 +1,6 @@
 # ha-tpb-mental-state-ontologies
 
-OWL Ontologies that capture social behavior, behavioral challenges and stress management in children with autism. A [Child Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-user-ontology-TURTLE-Syntax.owl) and an [Environment Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-environment-ontology-TURTLE-Syntax.owl) is shaped together with autism experts. The ontologies are structured following motivational aspects of Theory of Planned Behavior (TPB).
+OWL Ontologies that capture social behavior, behavioral challenges and stress management in children with autism. A [Child Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-user-ontology-TURTLE-Syntax.owl) and an [Environment Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-environment-ontology-TURTLE-Syntax.owl) is shaped together with autism experts. The ontologies are structured following motivational aspects of [Theory of Planned Behavior (TPB)](https://en.wikipedia.org/wiki/Theory_of_planned_behavior).
 
 ### Theoretical framework: Theory of planned behavior
 
