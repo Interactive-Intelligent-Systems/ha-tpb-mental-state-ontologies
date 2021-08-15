@@ -1,10 +1,10 @@
 # ha-tpb-mental-state-ontologies
 
-OWL Ontologies that capture social behavior, behavioral challenges and stress management in children with autism. A [Child Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-user-ontology-TURTLE-Syntax.owl) and an [Environment Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-environment-ontology-TURTLE-Syntax.owl) is shaped together with autism experts. The ontologies are structured following motivational aspects of [Theory of Planned Behavior (TPB)](https://en.wikipedia.org/wiki/Theory_of_planned_behavior).
+OWL Ontologies that capture social behavior, behavioral challenges and stress management in children with autism. A [Child Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-user-ontology-TURTLE-Syntax.owl) and an [Environment Ontology](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-environment-ontology-TURTLE-Syntax.owl) are shaped through knowledge elicitation studies with autism experts. 
 
 ### Theoretical framework: Theory of planned behavior
 
-TPB is a psychological theory for explaining and predicting an individual's intention to engage in a behavior at a specific time and place. The general idea is that an individual's beliefs about a behavior shapes the individual's attitudes, subjective norm, and perceived behavioral control in the behavior, which in turn promotes or inhibits engagement in the behavior.
+The ontologies are structured following motivational aspects of [Theory of Planned Behavior (TPB)](https://en.wikipedia.org/wiki/Theory_of_planned_behavior). TPB is a psychological theory for explaining and predicting an individual's intention to engage in a behavior at a specific time and place. The general idea is that an individual's beliefs about a behavior shapes the individual's attitudes, subjective norm, and perceived behavioral control in the behavior, which in turn promotes or inhibits engagement in the behavior.
 
 Ajzen, I. (1991). The theory of planned behavior. Organizational behavior and human decision processes, 50(2), 179-211.
 
