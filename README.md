@@ -14,7 +14,7 @@ The ontologies are the result of an interview study, scoped in the structure of 
 
 The ontologies capture the elements of stress in a structured format in which sources of stress can be linked to signs of stress and management of stress. The general idea of the knowledge graphs is to reason about observations; If a subset of the elements of stress can be observed and recognized in the environment, then a software system can reason about the observations to make inferences. For instance, in response to to an observed sign of stress (e.g., hesitation), and an observed environment aspect (e.g., noisy sound level), a suitable stress management procedure can be found. The ontologies can also capture and define mental states, such as stress states, motivation and learnability that is linked to beliefs of the environment.
 
-### Explore the ontologies using the open-source ontology editor, Protege
+### Explore the ontologies using the open-source ontology editor - Protege
 
 * Download Protege: https://protege.stanford.edu/
 * Install the OWLViz plugin for class hierarchy visualization: https://protegewiki.stanford.edu/wiki/OWLViz
