@@ -22,6 +22,8 @@ The ontologies capture the elements of stress in a structured format in which so
 
 * Open the tabs: Classes, Object Properties and Data Protperties
 
+* Get an overview by looking at the provided figures/images: tpb-user-ontology.png and tpb-environment-ontology.png
+
 ### Authors
 
 * Andreas Brännström {andreasb@cs.umu.se}
