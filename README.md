@@ -27,7 +27,7 @@ The ontologies capture the elements of stress in a structured format in which so
 
 ### Visual Overview
 
-* Get a visual overview of the ontologies by looking at the provided figures: 
+* Get an illustrative overview of the ontologies by looking at the provided figures: 
 <br/> > [Figures/tpb-user-ontology.png](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/Figures/tpb-user-ontology.png)
 <br/> > [Figures/tpb-environment-ontology.png](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/Figures/tpb-environment-ontology.png)
 
