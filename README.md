@@ -25,7 +25,7 @@ The ontologies capture the elements of stress in a structured format in which so
 
 * Explore: Classes, Object Properties and Data Protperties
 
-### Visual Overview
+### Visual overview
 
 * Get an illustrative overview of the ontologies by looking at the provided figures: 
 <br/> > [Figures/tpb-user-ontology.png](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/Figures/tpb-user-ontology.png)
