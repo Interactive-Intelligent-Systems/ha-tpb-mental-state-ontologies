@@ -23,9 +23,11 @@ The ontologies capture the elements of stress in a structured format in which so
 <br/> > [tpb-user-ontology.owl](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-user-ontology-TURTLE-Syntax.owl)
 <br/> > [tpb-environment-ontology.owl](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-environment-ontology-TURTLE-Syntax.owl)
 
-* Open the tabs: Classes, Object Properties and Data Protperties
+* Explore: Classes, Object Properties and Data Protperties
 
-* Get an overview by looking at the provided figures/images: 
+### Visual Overview
+
+* Get a visual overview of the ontologies by looking at the provided figures: 
 <br/> > [Figures/tpb-user-ontology.png](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/Figures/tpb-user-ontology.png)
 <br/> > [Figures/tpb-environment-ontology.png](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/Figures/tpb-environment-ontology.png)
 
