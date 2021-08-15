@@ -17,6 +17,7 @@ The ontologies capture the elements of stress in a structured format in which so
 ### Explore the ontologies using the open-source ontology editor, Protege
 
 * Download Protege: https://protege.stanford.edu/
+* Install the OWLViz plugin for class hierarchy visualization: https://protegewiki.stanford.edu/wiki/OWLViz
 
 * Open the files in Protege: 
 <br/> > [tpb-user-ontology.owl](https://github.com/Interactive-Intelligent-Systems/ha-tpb-mental-state-ontologies/blob/main/TURTLE-Syntax/tpb-user-ontology-TURTLE-Syntax.owl)
