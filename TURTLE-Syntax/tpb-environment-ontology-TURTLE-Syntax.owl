@@ -1,0 +1,414 @@
+@prefix : <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology> .
+
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology> rdf:type owl:Ontology ;
+                                                                               rdfs:comment "This ontology describes a social environment using aspects of Theory of Planned behavior. Cafeteria use-case."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#has_attitude_aspect
+:has_attitude_aspect rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Environment ;
+                     rdfs:range :Attitude_aspect ;
+                     rdfs:comment "The environment has an attitude aspect"@en ;
+                     rdfs:label "has_attitude_aspect"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#has_control_aspect
+:has_control_aspect rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Environment ;
+                    rdfs:range :Behavioral_control_aspect ;
+                    rdfs:comment "The environment has a control aspect"@en ;
+                    rdfs:label "has_control_aspect"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#has_norm_aspect
+:has_norm_aspect rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Environment ;
+                 rdfs:range :Subjective_norm_aspect ;
+                 rdfs:comment "The environment has a norm aspect"@en ;
+                 rdfs:label "has_norm_aspect"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#is_doing_behavior
+:is_doing_behavior rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain :Person ;
+                   rdfs:range :PersonBehavior ;
+                   rdfs:comment "A person is doing a behavior"@en ;
+                   rdfs:label "is_doing_behavior"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#is_located_in
+:is_located_in rdf:type owl:ObjectProperty ;
+               rdfs:domain :Person ;
+               rdfs:range :Area ;
+               rdfs:comment "A person is located at an area"@en ;
+               rdfs:label "is_located_in"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#is_occupied_by
+:is_occupied_by rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Area ;
+                rdfs:range :Person ;
+                rdfs:comment "An area is occupied by a person"@en ;
+                rdfs:label "is_occupied_by"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Light_intensity
+:Light_intensity rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Light ;
+                 rdfs:range xsd:int ;
+                 rdfs:comment "Light in the environment can be of different intensity"@en ;
+                 rdfs:label "Light intensity"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Music_mood
+:Music_mood rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Music ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Music can have different moods"@en ;
+            rdfs:label "Music_mood"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Person_age
+:Person_age rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:int ;
+            rdfs:label "Person_age"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Person_gender
+:Person_gender rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Person ;
+               rdfs:range xsd:string ;
+               rdfs:label "Person_gender"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#SoundIntensity
+:SoundIntensity rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Sound ;
+                rdfs:range xsd:int ;
+                rdfs:comment "Sound in the environment can be of different intensity"@en ;
+                rdfs:label "Sound_intensity"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Area
+:Area rdf:type owl:Class ;
+      rdfs:comment "An area in the social environment"@en ;
+      rdfs:label "Area"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Attitude_aspect
+:Attitude_aspect rdf:type owl:Class ;
+                 rdfs:comment "Aspects of the environment that influences attirude in a person"@en ;
+                 rdfs:label "Attitude_aspect"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Approaching
+:Behavior_Approaching rdf:type owl:Class ;
+                      rdfs:subClassOf :PersonBehavior ;
+                      rdfs:label "Behavior_Approaching"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_High_affective
+:Behavior_High_affective rdf:type owl:Class ;
+                         rdfs:subClassOf :PersonBehavior ;
+                         rdfs:label "Behavior_High_affective"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Laughing
+:Behavior_Laughing rdf:type owl:Class ;
+                   rdfs:subClassOf :PersonBehavior ;
+                   rdfs:label "Behavior_Laughing"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Leaving
+:Behavior_Leaving rdf:type owl:Class ;
+                  rdfs:subClassOf :PersonBehavior ;
+                  rdfs:label "Behavior_Leaving"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Looking
+:Behavior_Looking rdf:type owl:Class ;
+                  rdfs:subClassOf :PersonBehavior ;
+                  rdfs:label "Behavior_Looking"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Low_affective
+:Behavior_Low_affective rdf:type owl:Class ;
+                        rdfs:subClassOf :PersonBehavior ;
+                        rdfs:label "Behavior_Low_affective"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Participating
+:Behavior_Participating rdf:type owl:Class ;
+                        rdfs:subClassOf :PersonBehavior ;
+                        rdfs:label "Behavior_Participating"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Passive
+:Behavior_Passive rdf:type owl:Class ;
+                  rdfs:subClassOf :PersonBehavior ;
+                  rdfs:label "Behavior_Passive"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Self-focused
+:Behavior_Self-focused rdf:type owl:Class ;
+                       rdfs:subClassOf :PersonBehavior ;
+                       rdfs:label "Behavior_Self_focused"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Shouting
+:Behavior_Shouting rdf:type owl:Class ;
+                   rdfs:subClassOf :PersonBehavior ;
+                   rdfs:label "Behavior_Shouting"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Talking
+:Behavior_Talking rdf:type owl:Class ;
+                  rdfs:subClassOf :PersonBehavior ;
+                  rdfs:label "Behavior_Talking"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavior_Walking
+:Behavior_Walking rdf:type owl:Class ;
+                  rdfs:subClassOf :PersonBehavior ;
+                  rdfs:label "Behavior_Walking"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Behavioral_control_aspect
+:Behavioral_control_aspect rdf:type owl:Class ;
+                           rdfs:comment "Aspects of the environment that influences behavioral control in a person"@en ;
+                           rdfs:label "Behavior_control_aspect"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Cashier
+:Cashier rdf:type owl:Class ;
+         rdfs:subClassOf :Unknown ;
+         rdfs:label "Cashier"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Cashier_counter
+:Cashier_counter rdf:type owl:Class ;
+                 rdfs:subClassOf :Area ;
+                 rdfs:label "Cashier_counter"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Child
+:Child rdf:type owl:Class ;
+       rdfs:subClassOf :Person ;
+       rdfs:label "Child"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Decision_making
+:Decision_making rdf:type owl:Class ;
+                 rdfs:subClassOf :Behavioral_control_aspect ;
+                 rdfs:label "Decision_making"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Environment
+:Environment rdf:type owl:Class ;
+             rdfs:comment "The social environment"@en ;
+             rdfs:label "Environment"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Floor
+:Floor rdf:type owl:Class ;
+       rdfs:subClassOf :Area ;
+       rdfs:label "Floor"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Food_counter
+:Food_counter rdf:type owl:Class ;
+              rdfs:subClassOf :Area ;
+              rdfs:label "Food_counter"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Friend
+:Friend rdf:type owl:Class ;
+        rdfs:subClassOf :Person ;
+        rdfs:label "Friend"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Guest
+:Guest rdf:type owl:Class ;
+       rdfs:subClassOf :Unknown ;
+       rdfs:label "Guest"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Guides
+:Guides rdf:type owl:Class ;
+        rdfs:subClassOf :Behavioral_control_aspect ;
+        rdfs:label "Guides"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Interactions
+:Interactions rdf:type owl:Class ;
+              rdfs:subClassOf :Behavioral_control_aspect ;
+              rdfs:label "Interactions"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Light
+:Light rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude_aspect ;
+       rdfs:label "Light"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Lobby
+:Lobby rdf:type owl:Class ;
+       rdfs:subClassOf :Area ;
+       rdfs:label "Lobby"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Music
+:Music rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude_aspect ;
+       rdfs:label "Music"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Parent
+:Parent rdf:type owl:Class ;
+        rdfs:subClassOf :Person ;
+        rdfs:label "Parent"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Subjective_norm_aspect ;
+        rdfs:label "Person"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#PersonBehavior
+:PersonBehavior rdf:type owl:Class ;
+                rdfs:comment "A person's social behavior"@en ;
+                rdfs:label "Person_behavior"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Problem_solving
+:Problem_solving rdf:type owl:Class ;
+                 rdfs:subClassOf :Behavioral_control_aspect ;
+                 rdfs:label "Problem_solving"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Queue
+:Queue rdf:type owl:Class ;
+       rdfs:subClassOf :Area ;
+       rdfs:label "Queue"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Sound
+:Sound rdf:type owl:Class ;
+       rdfs:subClassOf :Attitude_aspect ;
+       rdfs:label "Sound"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Subjective_norm_aspect
+:Subjective_norm_aspect rdf:type owl:Class ;
+                        rdfs:comment "Aspects of the environment that influences subjective norm in a person"@en ;
+                        rdfs:label "Subjective_norm_aspect"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Table
+:Table rdf:type owl:Class ;
+       rdfs:subClassOf :Area ;
+       rdfs:label "Table"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Tasks
+:Tasks rdf:type owl:Class ;
+       rdfs:subClassOf :Behavioral_control_aspect ;
+       rdfs:label "Tasks"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Teacher
+:Teacher rdf:type owl:Class ;
+         rdfs:subClassOf :Person ;
+         rdfs:label "Teacher"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Unexpected_event
+:Unexpected_event rdf:type owl:Class ;
+                  rdfs:subClassOf :Attitude_aspect ;
+                  rdfs:label "Unexpected_event"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-environment-ontology#Unknown
+:Unknown rdf:type owl:Class ;
+         rdfs:subClassOf :Person ;
+         rdfs:label "Unknown"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Behavior_Approaching
+                :Behavior_High_affective
+                :Behavior_Laughing
+                :Behavior_Leaving
+                :Behavior_Looking
+                :Behavior_Low_affective
+                :Behavior_Participating
+                :Behavior_Passive
+                :Behavior_Self-focused
+                :Behavior_Shouting
+                :Behavior_Talking
+                :Behavior_Walking
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Cashier_counter
+                :Floor
+                :Food_counter
+                :Lobby
+                :Queue
+                :Table
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Decision_making
+                :Guides
+                :Interactions
+                :Problem_solving
+                :Tasks
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Light
+                :Music
+                :Sound
+                :Unexpected_event
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

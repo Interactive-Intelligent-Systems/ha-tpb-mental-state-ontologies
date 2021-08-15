@@ -1,0 +1,819 @@
+@prefix : <http://www.semanticweb.org/andre/ontologies/2021/7/user-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology> .
+
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology> rdf:type owl:Ontology ;
+                                                                        rdfs:comment "This ontology describes the mental state of an individual with social anxiety in a social activity, using aspects of Theory of Planned behavior."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#attendance_is_affecting
+:attendance_is_affecting rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Attendance_state ;
+                         rdfs:range :Learnability_state ;
+                         rdfs:comment "Attendance state is affecting learnability state of the child"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#has_attendance
+:has_attendance rdf:type owl:ObjectProperty ;
+                rdfs:domain :Child ;
+                rdfs:range :Attendance_state ;
+                rdfs:comment "Child has an attendance state"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#has_behavior_change
+:has_behavior_change rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Child ;
+                     rdfs:range :Behavior_change_process ;
+                     rdfs:comment "Child has a behavior change process"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#has_learnability
+:has_learnability rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Child ;
+                  rdfs:range :Learnability_state ;
+                  rdfs:comment "Child has a learnability state"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#has_stress
+:has_stress rdf:type owl:ObjectProperty ;
+            rdfs:domain :Child ;
+            rdfs:range :Stress_state ;
+            rdfs:comment "Child has a stress state"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#is_a_conduit_for
+:is_a_conduit_for rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :Can_learn_alone ,
+                              :Can_learn_with_assistance ;
+                  rdfs:range :Behavior_change_process ;
+                  rdfs:comment "A learnability state when the child can learn is a conduit for a behavior change process"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#is_affected_by
+:is_affected_by rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Child ;
+                rdfs:range :Source_of_stress ;
+                rdfs:comment "Child is affected by source of stress"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#is_caused_by
+:is_caused_by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Sign_of_stress ;
+              rdfs:range :Source_of_stress ;
+              rdfs:comment "Sign of stress is caused by source of stress"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#is_indicating
+:is_indicating rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Sign_of_stress ;
+               rdfs:range :Stress_state ;
+               rdfs:comment "Sign of stress is indicating stress state of the child"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#is_managed_by
+:is_managed_by rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Sign_of_stress ;
+               rdfs:range :Management_of_stress ;
+               rdfs:comment "Sign of stress is managed by an aspect in the environment"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#is_showing
+:is_showing rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Child ;
+            rdfs:range :Sign_of_stress ;
+            rdfs:comment "Child is showing sign of stress"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#stress_is_affecting
+:stress_is_affecting rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Stress_state ;
+                     rdfs:range :Learnability_state ;
+                     rdfs:comment "Stress state is affecting learnability state of the child"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#user_age
+:user_age rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Child ;
+          rdfs:range xsd:int ;
+          rdfs:label "Child_age"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#user_gender
+:user_gender rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Child ;
+             rdfs:range xsd:string ;
+             rdfs:label "Child_gender"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Aborting_triggering_event
+:Aborting_triggering_event rdf:type owl:Class ;
+                           rdfs:subClassOf :M_Attitude ;
+                           rdfs:label "Aborting_triggering_event"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Activity_transition
+:Activity_transition rdf:type owl:Class ;
+                     rdfs:subClassOf :Behavioral_control ;
+                     rdfs:label "Activity_transition"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Anger
+:Anger rdf:type owl:Class ;
+       rdfs:subClassOf :Emotional ;
+       rdfs:label "Anger"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Anxiety
+:Anxiety rdf:type owl:Class ;
+         rdfs:subClassOf :Emotional ;
+         rdfs:label "Anxiety"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Attendance_state
+:Attendance_state rdf:type owl:Class ;
+                  rdfs:comment "The attendancce state of the child"@en ;
+                  rdfs:label "Attendance_state"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Attitude
+:Attitude rdf:type owl:Class ;
+          rdfs:subClassOf :Source_of_stress ;
+          rdfs:comment "Sources of stress that influence attitude"@en ;
+          rdfs:label "Attitude"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Avoidance
+:Avoidance rdf:type owl:Class ;
+           rdfs:subClassOf :Behavioral ;
+           rdfs:label "Avoidance"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Be_alone
+:Be_alone rdf:type owl:Class ;
+          rdfs:subClassOf :M_Subjective_norm ;
+          rdfs:label "Be_alone"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Behavior_change_process
+:Behavior_change_process rdf:type owl:Class ;
+                         rdfs:comment "Behavior change process of the child"@en ;
+                         rdfs:label "Behavior_change_process"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Behavioral
+:Behavioral rdf:type owl:Class ;
+            rdfs:subClassOf :Sign_of_stress ;
+            rdfs:comment "Behavioral stress signs"@en ;
+            rdfs:label "Behavioral"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Behavioral_control
+:Behavioral_control rdf:type owl:Class ;
+                    rdfs:subClassOf :Source_of_stress ;
+                    rdfs:comment "Sources of stress that influence behavioral control"@en ;
+                    rdfs:label "Behavior_control"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Calm_environment
+:Calm_environment rdf:type owl:Class ;
+                  rdfs:subClassOf :M_Attitude ;
+                  rdfs:label "Calm_environment"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Can_learn_alone
+:Can_learn_alone rdf:type owl:Class ;
+                 rdfs:subClassOf :Learnability_state ;
+                 rdfs:comment "The activity is on a difficulty level so that the child can learn without assistance"@en ;
+                 rdfs:label "Can_learn_alone"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Can_learn_with_assistance
+:Can_learn_with_assistance rdf:type owl:Class ;
+                           rdfs:subClassOf :Learnability_state ;
+                           rdfs:comment "The activity is on a difficulty level so that the child can learn with assistance"@en ;
+                           rdfs:label "Can_learn_with_assistance"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Child
+:Child rdf:type owl:Class ;
+       rdfs:comment "A child / user is the main class of the ontology, to which mental states are connected"@en ;
+       rdfs:label "Child"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Conduct_control_strategies
+:Conduct_control_strategies rdf:type owl:Class ;
+                            rdfs:subClassOf :M_Behavioral_control ;
+                            rdfs:label "Conduct_control_strategies"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Conduct_coping_strategies
+:Conduct_coping_strategies rdf:type owl:Class ;
+                           rdfs:subClassOf :M_Subjective_norm ;
+                           rdfs:label "Conduct_coping_strategies"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Coping_strategies
+:Coping_strategies rdf:type owl:Class ;
+                   rdfs:subClassOf :Behavioral ;
+                   rdfs:label "Coping_strategies"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Decision_making
+:Decision_making rdf:type owl:Class ;
+                 rdfs:subClassOf :Behavioral_control ;
+                 rdfs:label "Decision_making"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Demands
+:Demands rdf:type owl:Class ;
+         rdfs:subClassOf :Behavioral_control ;
+         rdfs:label "Demands"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Emotional
+:Emotional rdf:type owl:Class ;
+           rdfs:subClassOf :Sign_of_stress ;
+           rdfs:comment "Emotional stress signs"@en ;
+           rdfs:label "Emotional"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Explosive
+:Explosive rdf:type owl:Class ;
+           rdfs:subClassOf :Behavioral ;
+           rdfs:label "Explosive"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Eye_movements
+:Eye_movements rdf:type owl:Class ;
+               rdfs:subClassOf :Physical ;
+               owl:disjointWith :Heart_rate ;
+               rdfs:label "Eye_movements"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Favorite_music
+:Favorite_music rdf:type owl:Class ;
+                rdfs:subClassOf :M_Attitude ;
+                rdfs:label "Favorite_music"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Friends_participating
+:Friends_participating rdf:type owl:Class ;
+                       rdfs:subClassOf :M_Subjective_norm ;
+                       rdfs:label "Friends_participating"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Frustration
+:Frustration rdf:type owl:Class ;
+             rdfs:subClassOf :Emotional ;
+             rdfs:label "Frustration"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Fun_activity
+:Fun_activity rdf:type owl:Class ;
+              rdfs:subClassOf :M_Attitude ;
+              rdfs:label "Fun_activity"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Guides
+:Guides rdf:type owl:Class ;
+        rdfs:subClassOf :M_Behavioral_control ;
+        rdfs:label "Guides"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Heart_rate
+:Heart_rate rdf:type owl:Class ;
+            rdfs:subClassOf :Physical ;
+            rdfs:label "Heart_rate"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Hesitation
+:Hesitation rdf:type owl:Class ;
+            rdfs:subClassOf :Behavioral ;
+            rdfs:label "Hesitation"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#High_affective_others
+:High_affective_others rdf:type owl:Class ;
+                       rdfs:subClassOf :Subjective_norm ;
+                       rdfs:label "High_affective_others"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Known_people
+:Known_people rdf:type owl:Class ;
+              rdfs:subClassOf :M_Subjective_norm ;
+              rdfs:label "Known_people"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Learnability_state
+:Learnability_state rdf:type owl:Class ;
+                    rdfs:comment "The learnability state of the child"@en ;
+                    rdfs:label "Learnability_state"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#M_Attitude
+:M_Attitude rdf:type owl:Class ;
+            rdfs:subClassOf :Management_of_stress ;
+            rdfs:comment "Management of attitude related stress"@en ;
+            rdfs:label "M_Attitude"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#M_Behavioral_control
+:M_Behavioral_control rdf:type owl:Class ;
+                      rdfs:subClassOf :Management_of_stress ;
+                      rdfs:comment "Management of behavior control related stress"@en ;
+                      rdfs:label "M_Behavioral_control"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#M_Subjective_norm
+:M_Subjective_norm rdf:type owl:Class ;
+                   rdfs:subClassOf :Management_of_stress ;
+                   rdfs:comment "Management of norm related stress"@en ;
+                   rdfs:label "M_Subjective_norm"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Management_of_stress
+:Management_of_stress rdf:type owl:Class ;
+                      rdfs:comment "Ways to manage the stress of the child"@en ;
+                      rdfs:label "Management_of_stress"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#No_demands
+:No_demands rdf:type owl:Class ;
+            rdfs:subClassOf :M_Behavioral_control ;
+            rdfs:label "No_demands"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Not_knowing_what_to_do
+:Not_knowing_what_to_do rdf:type owl:Class ;
+                        rdfs:subClassOf :Behavioral_control ;
+                        rdfs:label "Not_knowing_what_to_do"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Not_participating
+:Not_participating rdf:type owl:Class ;
+                   rdfs:subClassOf :Attendance_state ;
+                   rdfs:comment "The child is not participating in the activity"@en ;
+                   rdfs:label "Not_participating"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Others_not_following_rules
+:Others_not_following_rules rdf:type owl:Class ;
+                            rdfs:subClassOf :Subjective_norm ;
+                            rdfs:label "Others_not_following_rules"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Parent_participating
+:Parent_participating rdf:type owl:Class ;
+                      rdfs:subClassOf :M_Subjective_norm ;
+                      rdfs:label "Parent_participating"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Participating_interacting
+:Participating_interacting rdf:type owl:Class ;
+                           rdfs:subClassOf :Attendance_state ;
+                           rdfs:comment "The child is participating and interaction with others in the activity"@en ;
+                           rdfs:label "Participating_interacting"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Participating_self_focused
+:Participating_self_focused rdf:type owl:Class ;
+                            rdfs:subClassOf :Attendance_state ;
+                            rdfs:comment "The child is participating in the activity but is self focused"@en ;
+                            rdfs:label "Participating_self_focused"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Passive
+:Passive rdf:type owl:Class ;
+         rdfs:subClassOf :Attendance_state ;
+         rdfs:comment "The child is passive in the activity"@en ;
+         rdfs:label "Passive"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Physical
+:Physical rdf:type owl:Class ;
+          rdfs:subClassOf :Sign_of_stress ;
+          rdfs:comment "Physical stress signs"@en ;
+          rdfs:label "Physical"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Pleasant_lights
+:Pleasant_lights rdf:type owl:Class ;
+                 rdfs:subClassOf :M_Attitude ;
+                 rdfs:label "Pleasant_lights"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Pleasant_sounds
+:Pleasant_sounds rdf:type owl:Class ;
+                 rdfs:subClassOf :M_Attitude ;
+                 rdfs:label "Pleasant_sounds"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Predictability
+:Predictability rdf:type owl:Class ;
+                rdfs:subClassOf :M_Behavioral_control ;
+                rdfs:label "Predictability"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Ripping_on_clothes
+:Ripping_on_clothes rdf:type owl:Class ;
+                    rdfs:subClassOf :Behavioral ;
+                    rdfs:label "Ripping_on_clothes"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Sadness
+:Sadness rdf:type owl:Class ;
+         rdfs:subClassOf :Emotional ;
+         rdfs:label "Sadness"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Safe_place
+:Safe_place rdf:type owl:Class ;
+            rdfs:subClassOf :M_Behavioral_control ;
+            rdfs:label "Safe_place"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Saying_no
+:Saying_no rdf:type owl:Class ;
+           rdfs:subClassOf :Behavioral ;
+           rdfs:label "Saying_no"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Screaming
+:Screaming rdf:type owl:Class ;
+           rdfs:subClassOf :Behavioral ;
+           rdfs:label "Screaming"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Scrubbing
+:Scrubbing rdf:type owl:Class ;
+           rdfs:subClassOf :Behavioral ;
+           rdfs:label "Scrubbing"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Self_injurious
+:Self_injurious rdf:type owl:Class ;
+                rdfs:subClassOf :Behavioral ;
+                rdfs:label "Self_injurious"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Shaking_legs
+:Shaking_legs rdf:type owl:Class ;
+              rdfs:subClassOf :Behavioral ;
+              rdfs:label "Shaking_legs"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Sign_of_stress
+:Sign_of_stress rdf:type owl:Class ;
+                rdfs:comment "Stress signs in the child"@en ;
+                rdfs:label "Sign_of_stress"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Social_interactions
+:Social_interactions rdf:type owl:Class ;
+                     rdfs:subClassOf :Subjective_norm ;
+                     rdfs:label "Social_interactions"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Source_of_stress
+:Source_of_stress rdf:type owl:Class ;
+                  rdfs:comment "Source of stress in the environment"@en ;
+                  rdfs:label "Source_of_stress"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Stress_state
+:Stress_state rdf:type owl:Class ;
+              rdfs:comment "The stress state of the child"@en ;
+              rdfs:label "Stress_state"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Subjective_norm
+:Subjective_norm rdf:type owl:Class ;
+                 rdfs:subClassOf :Source_of_stress ;
+                 rdfs:comment "Sources of stress that influence subjective norm"@en ;
+                 rdfs:label "Subjective_norm"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Tasks
+:Tasks rdf:type owl:Class ;
+       rdfs:subClassOf :Behavioral_control ;
+       rdfs:label "Tasks"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Teacher_participating
+:Teacher_participating rdf:type owl:Class ;
+                       rdfs:subClassOf :M_Subjective_norm ;
+                       rdfs:label "Teacher_participating"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Too_difficult_even_alone
+:Too_difficult_even_alone rdf:type owl:Class ;
+                          rdfs:subClassOf :Learnability_state ;
+                          rdfs:comment "The activity is too easy to learn, even without assistance"@en ;
+                          rdfs:label "Too_easy_even_alone"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Too_difficult_even_with_assistance
+:Too_difficult_even_with_assistance rdf:type owl:Class ;
+                                    rdfs:subClassOf :Learnability_state ;
+                                    rdfs:comment "The activity is too difficulty to learn, even with assistance"@en ;
+                                    rdfs:label "Too_difficult_even_with_assistance"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unexpected_events
+:Unexpected_events rdf:type owl:Class ;
+                   rdfs:subClassOf :Attitude ;
+                   rdfs:label "Unexpected_event"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unknown_people
+:Unknown_people rdf:type owl:Class ;
+                rdfs:subClassOf :Subjective_norm ;
+                rdfs:label "Unknown_people"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unplanned_changes
+:Unplanned_changes rdf:type owl:Class ;
+                   rdfs:subClassOf :Behavioral_control ;
+                   rdfs:label "Unplanned_changes"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unpleasant_light
+:Unpleasant_light rdf:type owl:Class ;
+                  rdfs:subClassOf :Attitude ;
+                  rdfs:label "Unpleasant_light"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unpleasant_music
+:Unpleasant_music rdf:type owl:Class ;
+                  rdfs:subClassOf :Attitude ;
+                  rdfs:label "Unpleasant_music"@en ,
+                             "Unpleaseant_music"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unpleasant_sounds
+:Unpleasant_sounds rdf:type owl:Class ;
+                   rdfs:subClassOf :Attitude ;
+                   rdfs:label "Unpleasant_sounds"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unpredictability
+:Unpredictability rdf:type owl:Class ;
+                  rdfs:subClassOf :Behavioral_control ;
+                  rdfs:label "Unpredictability"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unresponsive
+:Unresponsive rdf:type owl:Class ;
+              rdfs:subClassOf :Emotional ;
+              rdfs:label "Unresponsive"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Unsure_about_acceptablity_of_others
+:Unsure_about_acceptablity_of_others rdf:type owl:Class ;
+                                     rdfs:subClassOf :Subjective_norm ;
+                                     rdfs:label "Unsure_about_acceptability_of_others"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Violent
+:Violent rdf:type owl:Class ;
+         rdfs:subClassOf :Behavioral ;
+         rdfs:label "Violent"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Walking
+:Walking rdf:type owl:Class ;
+         rdfs:subClassOf :Behavioral ;
+         rdfs:label "Walking"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#Wiggling
+:Wiggling rdf:type owl:Class ;
+          rdfs:subClassOf :Behavioral ;
+          rdfs:label "Wiggling"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#1_Balanced
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#1_Balanced> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf :Stress_state ;
+                                                                                  rdfs:comment "The child is in a state of balance, here the child can be challenged"@en ;
+                                                                                  rdfs:label "1_Balanced"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#2_Unbalanced
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#2_Unbalanced> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf :Stress_state ;
+                                                                                    rdfs:comment "The child is unbalanced, and should not be challenged."@en ;
+                                                                                    rdfs:label "2_Unbalanced"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#3_Stressed
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#3_Stressed> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf :Stress_state ;
+                                                                                  rdfs:comment "The child is in stress, and should not be challenged"@en ;
+                                                                                  rdfs:label "3_Stressed"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#4_Compulsive
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#4_Compulsive> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf :Stress_state ;
+                                                                                    rdfs:comment "The child does compulsive stress behavior"@en ;
+                                                                                    rdfs:label "4_Complusive"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#5_Unresponsive
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#5_Unresponsive> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf :Stress_state ;
+                                                                                      rdfs:comment "The child is unresponsive"@en ;
+                                                                                      rdfs:label "5_Unresponsive"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#6_Explosive
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#6_Explosive> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :Stress_state ;
+                                                                                   rdfs:comment "The child has explosive stress behavior"@en ;
+                                                                                   rdfs:label "6_Explosive"@en .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#7_Out_acting
+<http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#7_Out_acting> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf :Stress_state ;
+                                                                                    rdfs:comment "The child is out acting, can be violent"@en ;
+                                                                                    rdfs:label "7_Out_acting"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Aborting_triggering_event
+                :Calm_environment
+                :Favorite_music
+                :Fun_activity
+                :Pleasant_lights
+                :Pleasant_sounds
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Activity_transition
+                :Decision_making
+                :Demands
+                :Not_knowing_what_to_do
+                :Tasks
+                :Unplanned_changes
+                :Unpredictability
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Anger
+                :Anxiety
+                :Frustration
+                :Sadness
+                :Unresponsive
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Attendance_state
+                :Learnability_state
+                :Management_of_stress
+                :Sign_of_stress
+                :Source_of_stress
+                :Stress_state
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Attitude
+                :Behavioral_control
+                :Subjective_norm
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Avoidance
+                :Coping_strategies
+                :Explosive
+                :Hesitation
+                :Ripping_on_clothes
+                :Saying_no
+                :Screaming
+                :Scrubbing
+                :Self_injurious
+                :Shaking_legs
+                :Violent
+                :Walking
+                :Wiggling
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Be_alone
+                :Conduct_coping_strategies
+                :Friends_participating
+                :Known_people
+                :Parent_participating
+                :Teacher_participating
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Behavioral
+                :Emotional
+                :Physical
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Can_learn_alone
+                :Can_learn_with_assistance
+                :Too_difficult_even_alone
+                :Too_difficult_even_with_assistance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Conduct_control_strategies
+                :Guides
+                :No_demands
+                :Predictability
+                :Safe_place
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :High_affective_others
+                :Others_not_following_rules
+                :Social_interactions
+                :Unknown_people
+                :Unsure_about_acceptablity_of_others
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Not_participating
+                :Participating_interacting
+                :Participating_self_focused
+                :Passive
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Unexpected_events
+                :Unpleasant_light
+                :Unpleasant_music
+                :Unpleasant_sounds
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#1_Balanced>
+                <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#2_Unbalanced>
+                <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#3_Stressed>
+                <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#4_Compulsive>
+                <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#5_Unresponsive>
+                <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#6_Explosive>
+                <http://www.semanticweb.org/andre/ontologies/2021/7/tpb-user-ontology#7_Out_acting>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
