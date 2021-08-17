@@ -33,10 +33,16 @@ The general idea of the knowledge graphs (ontologies) is to reason about observa
 
 ### Authors
 
-* Andreas Brännström {andreasb@cs.umu.se} [Homepage](https://people.cs.umu.se/andreasb/)
-* Timotheus Kampik {tkampik@cs.umu.se} [Homepage](https://www.umu.se/en/staff/timotheus-kampik/)
-* Juan Carlos Nieves {jcnieves@cs.umu.se} [Homepage](https://www.umu.se/en/staff/juan-carlos-nieves/)
+* Andreas Brännström<sup>1</sup> {andreasb@cs.umu.se} [Homepage](https://people.cs.umu.se/andreasb/)
+* Timotheus Kampik<sup>1</sup> {tkampik@cs.umu.se} [Homepage](https://www.umu.se/en/staff/timotheus-kampik/)
+* Juan Carlos Nieves<sup>1</sup> {jcnieves@cs.umu.se} [Homepage](https://www.umu.se/en/staff/juan-carlos-nieves/)
+* Erik Domellöf<sup>2</sup> {erik.domellof@umu.se} [Homepage](https://www.umu.se/en/staff/erik-domellof/)
+* Limin Gu<sup>3</sup> {limin.gu@umu.se} [Homepage](https://www.umu.se/en/staff/limin-gu/)
+* Monica Liljeström<sup>3</sup> {monica.liljestrom@umu.se} [Homepage](https://www.umu.se/en/staff/monica-liljestrom/)
 
-Department of Computing Science  
+<sup>1</sup>Department of Computing Science<br/>
+<sup>2</sup>Department of Psychology<br/>
+<sup>3</sup>Department of Education
+
 Umeå university  
 SE-901 87, Umeå, Sweden  
